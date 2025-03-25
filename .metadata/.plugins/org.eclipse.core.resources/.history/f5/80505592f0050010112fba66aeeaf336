@@ -1,0 +1,34 @@
+package io.github.unlp_oo.archetype;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class User {
+	private List <Tweet> tweets;
+	private String screenName;
+	
+	public User (String aName) {
+		this.screenName = aName;
+		this.tweets = new ArrayList<Tweet>();
+	}
+	
+	public String getName() {
+		return this.screenName;
+	}
+	
+	public void setNombre(String nombre) {
+		this.screenName = nombre;
+	}
+	
+	public boolean createTweet(String aMessage) {
+		return this.tweets.add(new Tweet(aMessage));
+	}
+	
+	public boolean createTweet(Tweet aTweet) {
+		return this.tweets.add(new Tweet(aTweet));
+	}
+
+	public boolean removeTweets() {
+		return this.tweets.removeAll(tweets);
+	}
+}

@@ -1,0 +1,49 @@
+package io.github.unlp_oo.archetype;
+
+import java.util.List;
+
+/**
+ * De esta forma crearemos las clases del ejercicio
+ *
+ */
+public class User {
+	private List <Tweet> tweets;
+	private String name;
+	private String surname;
+	private int DNI;
+	
+	public User (String aName, String aSurname, int aDNI) {
+		this.name = aName;
+		this.surname=aSurname;
+		this.DNI = aDNI;
+		this.tweets = new ArrayList<Tweet>();
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	
+	/**
+	 * Retorna el nombre completo de la persona de la forma apellido, nombre
+	 * @return
+	 */
+	public String getNombreCompleto() {
+		return tweets.add(new Tweet(Mensaje));
+	}
+
+}

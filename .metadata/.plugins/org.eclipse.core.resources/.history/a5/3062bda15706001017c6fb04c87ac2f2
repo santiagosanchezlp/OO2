@@ -1,0 +1,14 @@
+package io.github.unlp_oo.archetype;
+
+public class Tweet {
+	private String message;
+	private Tweet retweet;
+	
+	public Tweet (String aMessage) {
+		this.message = aMessage;
+	}
+	
+	public Tweet (Tweet aTweet) {
+		this.retweet = aTweet;
+	}
+}

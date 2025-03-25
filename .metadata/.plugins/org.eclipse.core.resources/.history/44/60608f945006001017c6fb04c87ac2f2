@@ -1,0 +1,6 @@
+package io.github.unlp_oo.archetype;
+
+public interface Resultado {
+	public abstract Opcion ganaA();
+	public abstract Opcion pierdeCon();
+}

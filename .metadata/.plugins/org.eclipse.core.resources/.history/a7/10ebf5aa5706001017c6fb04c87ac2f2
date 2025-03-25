@@ -1,0 +1,9 @@
+package io.github.unlp_oo.archetype;
+
+public class Retweet {
+	private Tweet retweet;
+	
+	public Retweet (Tweet aTweet) {
+		this.retweet = aTweet;
+	}
+}

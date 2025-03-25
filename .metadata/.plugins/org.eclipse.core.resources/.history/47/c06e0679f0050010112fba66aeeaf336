@@ -1,0 +1,14 @@
+package io.github.unlp_oo.archetype;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TwitterTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

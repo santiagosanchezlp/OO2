@@ -1,0 +1,26 @@
+@startuml
+abstract class Opcion{
++String resultado (unaOpcion: Opcion)
+#boolean ganador(unaOpcion: Opcion);
+#boolean perdedor(unaOpcion: Opcion);
+}
+
+Opcion <|--Piedra
+Opcion <|--Papel
+Opcion <|--Tijera
+
+class Piedra{
+-boolean ganador(unaOpcion: Opcion;
+-boolean perdedor(unaOpcion: Opcion);
+}
+
+class Tijera{
+-boolean ganador(unaOpcion: Opcion);
+-boolean perdedor(unaOpcion: Opcion);
+}
+
+class Papel{
+-boolean ganador(unaOpcion: Opcion);
+-boolean perdedor(unaOpcion: Opcion);
+}
+@enduml

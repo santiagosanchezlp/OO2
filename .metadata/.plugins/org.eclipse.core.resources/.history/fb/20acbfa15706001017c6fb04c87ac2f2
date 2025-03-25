@@ -1,0 +1,25 @@
+@startuml
+class Twitter{
+-List<User> users
++boolean createUser(String name)
++boolean removeUser(User user)
+-boolean existUser(String name)
+}
+
+class User{
+-String ScreenName
+-List<Tweet> tweets
++User(String aName)
++ boolean createTweet(String aMessage)
++boolean reTweet(Tweet aTweet)
++boolean removeTweet ()
+-boolean checkLenght(String aMessage)
+}
+
+class Tweet{
+-String message
+-Tweet retweet
++Tweet (String aMessage)
++Tweet (Tweet aTweet)
+}
+@enduml

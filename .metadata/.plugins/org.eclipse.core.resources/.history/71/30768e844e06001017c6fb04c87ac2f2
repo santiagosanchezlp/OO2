@@ -1,0 +1,9 @@
+package io.github.unlp_oo.archetype;
+
+public abstract class Opcion {
+
+	private String name;
+	
+	public abstract String resultado (Opcion) ;
+
+}
