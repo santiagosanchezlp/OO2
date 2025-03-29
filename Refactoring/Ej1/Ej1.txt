@@ -1,0 +1,5 @@
+1.2
+Persona: id debería ser privado para no romper el encapsulamiento y tener un getter
+Había una INAPPROPIATE INTIMACY que fue corregida al hacer Move Method
+
+
