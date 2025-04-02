@@ -39,16 +39,13 @@ public List<Post> ultimosPosts(Usuario user, int cantidad) {
 ##### Bad Smell: Long Method
 ##### Refactoring: Extract Method
 ```java
-public List<Post> ultimosPosts(Usuario user, int cantidad) {
-    List<Post> postsOtrosUsuarios = postOtrosUsuarios(user);
-    List<Post> postsOtrosOrdenada = ordenarPost(postOtrosUsuarios);
-    List<Post> ultimosPosts = ultimosPosts(postsOtrosOrdenada, cantidad);
-      
-   
-      
-        
-    
-}
+        public List<Post> ultimosPosts(Usuario user, int cantidad) {
+            List<Post> postsOtrosUsuarios = postOtrosUsuarios(user);
+            List<Post> postsOtrosOrdenada = ordenarPost(postOtrosUsuarios);
+            List<Post> ultimosPosts = ultimosPosts(postsOtrosOrdenada, cantidad);
+            return ultimosPosts;
+        }
+
     private List<Post> postsOtrosUsuario (Usuario user){
       new ArrayList<Post>();
       for (Post post : this.posts) {
@@ -80,4 +77,34 @@ public List<Post> ultimosPosts(Usuario user, int cantidad) {
       }
     return ultimosPosts;
     }
+```
+##### Bad Smell: Long Method
+##### Refactoring: Replace Loop with pipeline
+```java
+    private List<Post> postsOtrosUsuario (Usuario user){
+      return this.posts.stream()
+        .filter(u->!u.getUsuario().equals(user))
+        .collect(Collectors.toList());  
+    }
+    private List<Post> ordenarPost (List<Post> postsOtros){
+      return postOtros.stream()
+        .sorted((f1, f2) -> f1.getFecha().compareTo(f2.getFecha()))
+        .collect(Collectors.toList()); 
+    }
+    private ultimosPosts(postsOtrosOrdenada, cantidad){
+      return postsOtrosOrdenada.stream()
+        .limit(cantidad)
+        .collect(Collectors.toList());
+    }
+```
+##### Bad Smell: Temporary Field
+##### Refactoring: Substitute Algorithm
+```java
+        public List<Post> ultimosPostsOtrosUsuarios(Usuario user, int cantidad){   
+            return this.posts.stream()
+            .filter(u->!u.getUsuario().equals(user))
+            .sorted((f1, f2) -> f1.getFecha().compareTo(f2.getFecha()));
+            .limit(cantidad)
+            .collect(Collectors.toList());    
+        }
 ```
