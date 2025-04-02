@@ -1,4 +1,5 @@
 # Ejercicio 2.4
+<a href="https://ibb.co/VcdD2qL4"><img src="https://i.ibb.co/1t3K8m0W/UMLCarrito.jpg" alt="UMLCarrito" border="0"></a>
 ### Código original
 ```java
 public class Producto {
