@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Ejercicio_1 Red social/src/main/java"/>
+	<classpathentry kind="src" path="Ejercicio_1 Red social/src/test/java"/>
+	<classpathentry kind="src" path="Ejercicio_2 Piedra Papel Tijera/src/main/java"/>
+	<classpathentry kind="src" path="Ejercicio_2 Piedra Papel Tijera/src/test/java"/>
+	<classpathentry kind="src" path="Refactoring/Ej1"/>
+	<classpathentry kind="src" path="Refactoring/Ej2.1"/>
+	<classpathentry kind="src" path="Refactoring/Ej2.2"/>
+	<classpathentry kind="src" path="Refactoring/Ej2.3"/>
+	<classpathentry kind="src" path="Refactoring/Ej2.4"/>
+	<classpathentry kind="src" path="Refactoring/Ej 2.5"/>
+	<classpathentry kind="src" path="Refactoring/Ej 2.6"/>
+	<classpathentry kind="src" path="Repaso/Ejercicio_1 Red social/src/main/java"/>
+	<classpathentry kind="src" path="Repaso/Ejercicio_1 Red social/src/test/java"/>
+	<classpathentry kind="src" path="Repaso/Ejercicio_2 Piedra Papel Tijera/src/main/java"/>
+	<classpathentry kind="src" path="Repaso/Ejercicio_2 Piedra Papel Tijera/src/test/java"/>
+	<classpathentry kind="output" path="Ejercicio_1 Red social/target/classes"/>
+</classpath>

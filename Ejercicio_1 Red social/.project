@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>archetype-objetos</name>
+	<name>Ejercicio_1 Red social</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,7 +22,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1743547279326</id>
+			<id>1743547279347</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
