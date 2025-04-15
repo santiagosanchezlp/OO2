@@ -1,0 +1,31 @@
+@startuml
+
+Empleado <|-- EmpleadoPasante
+Empleado <|-- EmpleadoPlanta
+Empleado <|-- EmpleadoTemporario
+EmpleadoPasante --> "-examenes \n 0..*" Examen
+EmpleadoTemporario --> "-hijos \n 0..*" Hijo
+EmpleadoPlanta --> "-hijos \n 0..*" Hijo
+
+abstract class Empleado{
++sueldo(): real
+#sueldoBasico(): real
+#sueldoAdicional(): real
+#descuento(): real
+}
+
+class EmpleadoPasante{
+}
+
+class EmpleadoTemporario{
+- casado: boolean
+}
+
+class EmpleadoPlanta{
+- casado: boolean
+- fechaIngreso: LocalDate
+}
+}
+@enduml
+
+//www.plantuml.com/plantuml/png/VOzDIuCn48Jl-okMUl635Cz5f8e51GyUF7hP9gkDRB8bcnU4slzkyCDONoivpJoJtPsvLIfrI0AmI6jX2efdhyxXbxeZernv7vK6QG-yvxJMGYKg_9g6pftZnF4B9Svi-93nT3ezdk3YtO7nXCyVg_YiF-BNJSBkBVy4WPPM2_cANiZi-yuDdDZ04lJmQ8Q5IU3WGr-IHJzoBqBqKJD91u7D3vnhpsu1-fBUd3TZqajkmA4dQzuCbwgDvjruh_bNrE4Z-nNTvAV2rlnRzIHNL1csxSqvXo796m00

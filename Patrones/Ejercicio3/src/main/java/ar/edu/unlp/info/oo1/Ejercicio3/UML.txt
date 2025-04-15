@@ -1,0 +1,35 @@
+@startuml
+
+Media <|-- Audio
+Media <|-- VideoFile
+Media <|-- VideoStreamAdapter
+MediaPlayer --> "-media \n 0..*" Media
+VideoStreamAdapter --> VideoStream
+
+class VideoStream{
++reproduce()
+}
+class MediaPlayer {
++ play()
+}
+
+class Media {
++ play()
+}
+
+class Audio{
++ play()
+}
+
+class VideoFile{
++ play()
+}
+
+class VideoStreamAdapter{
++ play()
+}
+
+}
+@enduml
+
+//www.plantuml.com/plantuml/png/RP2_2i8m48VtUugZatz8yG54siLD40GdbwDtGo3zmpKTHFlkbaGmqcpX-xuGVgb6J-gdrW5SX2tXyMqCrXFRFWLtozAVhPCLl7aLQckcmOj6UtNq54LZJbYODlIF3WzbkIim1B2w6Ui40pIEnZ55BzYh3DhprCXc2_EtI9zS4XoMOz2fpvcuCYD-QpCoi_g_cg6IZfSV_G00

@@ -1,0 +1,37 @@
+@startuml
+
+Criterio <|-- Novedad
+Criterio <|-- Similaridad
+Criterio <|-- Puntaje
+Decodificador --> "-peliculasOfrecidas \n 0..*" Pelicula
+Decodificador --> "-criterio" Criterio
+Decodificador --> "-peliculasReproducidad \n 0..*" Pelicula
+Pelicula <-- "-peliculasOfrecidas \n 0..*" Criterio
+
+class Decodificador {
++reproducir(pelicula: Pelicula)
++sugerencia(): List<Pelicula>
+}
+abstract class Criterio {
++ sugerencia(decodificador: Decodificador): List<Pelicula>
+}
+
+class Novedad{
++ sugerencia(decodificador: Decodificador): List<Pelicula>
+}
+
+class Similaridad{
++ sugerencia(decodificador: Decodificador): List<Pelicula>
+}
+
+class Puntaje{
++ sugerencia(decodificador: Decodificador): List<Pelicula>
+}
+class Pelicula{
++ similar(pelicula: Pelicula)
++ getPeliculasSimilares(): List<Pelicula>
+}
+
+@enduml
+
+//www.plantuml.com/plantuml/png/hPAnJiD038RtUmehKqjr5NCKLPLWH531ocBktCheabJs7GlmxgWqHYb4NUYMsFBt_T6VjMQKNDhat8rm9k4UcW_luRv_euZnr_I9Mque_7UpALt6LtAt5Fh8MmuOUm7lLr3vFIKE9Q4-R8K2HrHuxk1wkRogO3Fi9W_3eAZ0PEVvZxINFfQ38auex04Qxy_66lbSIAWAfzftjn1JoSmuzOzfxXPQTYJK1SRPl8OxrjpOTkK-7Rve5WmPZdZJ7SWmEerZRNsQOW8xfBNoBWEppYy5j5_bVx21PPDls37eT1-mesolEdmIwMGtRarTB6tw0W00
