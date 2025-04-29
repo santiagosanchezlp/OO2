@@ -6,14 +6,15 @@ public class Pending implements State{
 	public  void toDoItem(ToDoItem name) {
 		
 	}
-	public  void start(ToDoItem name) {
-		name.setState(new InProgress());
-		name.setStart();
+	public  State start(ToDoItem name) {
+		return new InProgress();
 	}
-	public  void togglePause(ToDoItem name) {
+	public  State togglePause(ToDoItem name) {
 		throw new RuntimeException("ERROR: you can't pause (or unpause) in pending state");
 	}
-	public  void finish(ToDoItem name) {}
+	public  State finish(ToDoItem name) {
+		return new Finished();
+	}
 
 	public  Duration workedTime(ToDoItem name) {
 		throw new RuntimeException("ERROR: ToDoItem " + name.getName() +" didn't start");

@@ -5,13 +5,14 @@ import java.time.LocalDate;
 
 public class Paused implements State{
 	
-	public  void start(ToDoItem name) {}
-	public  void togglePause(ToDoItem name) {
-		name.setState(new InProgress());
+	public  State start(ToDoItem name) {
+		return this;
 	}
-	public  void finish(ToDoItem name) {
-		name.setState(new Finished());
-		name.setFinish();
+	public  State togglePause(ToDoItem name) {
+		return new InProgress();
+	}
+	public  State finish(ToDoItem name) {
+		return new Finished();
 	}
 	public  Duration workedTime(ToDoItem name) {
 		return Duration.between(name.getStart(), LocalDate.now());

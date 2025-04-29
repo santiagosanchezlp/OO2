@@ -18,10 +18,6 @@ public class ToDoItem {
 		this.state = new Pending();
 	}
 	
-	public void setState(State unState) {
-		this.state = unState;
-	}
-	
 	public State getState() {
 		return this.state;
 	}
@@ -30,15 +26,8 @@ public class ToDoItem {
 		return this.name;
 	}
 	
-	public void setStart() {
-		this.startDate = LocalDate.now();
-	}
 	public LocalDate getStart() {
 		return this.startDate;
-	}
-	
-	public void setFinish() {
-		this.finishDate = LocalDate.now();
 	}
 	
 	public LocalDate getFinish () {
@@ -46,13 +35,18 @@ public class ToDoItem {
 	}
 	
 	public  void start() {
-		this.state.start(this);
+		this.state = this.state.start(this);
+		if (this.startDate == null)
+			this.startDate = LocalDate.now();
 	}
 	public  void togglePause() {
-		this.state.togglePause(this);
+		this.state = this.state.togglePause(this);
 	}
+	
 	public  void finish() {
-		this.state.finish(this);
+		this.state = this.state.finish(this);
+		if (this.finishDate == null)
+			this.finishDate = LocalDate.now();
 	}
 	public  Duration workedTime() {
 		return this.state.workedTime(this);

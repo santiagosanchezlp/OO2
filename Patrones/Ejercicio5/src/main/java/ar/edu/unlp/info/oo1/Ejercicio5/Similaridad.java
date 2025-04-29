@@ -4,22 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Similaridad extends Criterio{
-	public Similaridad(List<Pelicula> oferta) {
-		super(oferta);
-		// TODO Auto-generated constructor stub
-	}
+public class Similaridad extends CriterioStrategy{
 
-	public List<Pelicula> sugerencia(Decodificador deco){
-		List <Pelicula> sugerencias = new ArrayList<Pelicula>();
-		ArrayList <Pelicula> peliculasReproducidas = (ArrayList<Pelicula>) deco.getPeliculasReproducidas();
-		int i = 0;
-		while (sugerencias.size() < 3) {
-			sugerencias.addAll(peliculasReproducidas.get(i).getPeliculasSimilares());
-			i++;
-		}
-		return sugerencias.stream()
-				.limit(3)
-				.collect(Collectors.toList());
+	public List<Pelicula> peliculasSugeridas(Decodificador deco){
+		return deco.getPeliculasReproducidas().stream()
+				.flatMap(p -> p.getPeliculasSimilares().stream())
+				.sorted((pe1, pe2) -> 
+					Integer.compare(pe2.getAnoEstreno(), pe1.getAnoEstreno()))
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 }
