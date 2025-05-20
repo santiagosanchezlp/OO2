@@ -1,0 +1,54 @@
+@startuml
+
+Director --> Constructor
+Constructor <|-- ConstructorArquero
+Constructor <|--  ConstructorGuerrero
+Constructor <|-- ConstructorMago
+Constructor -> Personaje
+Personaje ---> Arma
+Personaje ---> Armadura
+Personaje "-habilidades" ---> "0..*" String
+Arma <|-- Espada
+Arma <|-- Arco
+Arma <|-- Baston
+Armadura <|-- ArmaduraDeAcero
+Armadura <|-- ArmaduraDeCuero
+Armadura <|-- ArmaduraDeHierro
+
+class Director{
+- constructor: Constuctor
++ Director(c: Constructor)
++construirPersonaje(String nombre): Personaje
+}
+
+abstract class Constructor{
+- p: Personaje
++ reset()
++ agregarNombre()
++ agregarArmadura()
++ agregarArma()
++ agregarHabilidades()
++ getPersonaje(): Personaje
+}
+
+class Personaje{
+- nombre: String
+- vida: int
++ vivo(): boolean
++ quitarVida(int daño)
++ enfrentamiento (Personaje otro)
+}
+
+interface Arma{
++ calcularDaño(Armadura a): int
+}
+
+interface Armadura{
++ recibirDañoDeEspada(): int
++ recibirDañoDeArco(): int
++ recibirDañoDeBaston(): int
+}
+
+@enduml
+
+//www.plantuml.com/plantuml/png/VLBDRjGm4BxxAKPxyh9onJb2g4iNqGi82Odxn9a6eyHkntOlXOVY6NWnnZL9pBRbOdc-xvl_kOm9EULvKkhac6mA3CQyXQlWO-9SRDNyuSqFOrhoo7UPE3pLjA8F8k5dLGtm4ST_1LB5P-8OF7udjVx0626EFEDps92vnNVc6_PkSWCE57TLjdjzSV5g1ryIEp-gubHBUHzlSS06EB8DZVaEOmfUBLagk5WdEbhYy29xbV_7NZjYePMTC4POzl2W3DXj7bqTLbt9OLLfsxLJtAl3Nn_7wnnqRHPyc7kcVTVCzQTIs8iSROAQlWbMAhXjrGTWYfIqP04ScKRaJuynMsJfwnnhxUjjBO_mI6chzgp0EfODAbNLJhfbYmRk9LW7pYTraFzzA47w42P2ByXTTWdvgsYqI630txz2IKl-Xiadd9sy0VHsEI6nA2Ivw8blq1AK7Xx4oU9ayuHyAb7qkbFSr_ndFfKjVapMzQwwdQYUcwvEJzXoUoznzH3rbkwI_93dwGy0

@@ -1,0 +1,28 @@
+@startuml
+
+DatabaseAccess <|.. DatabaseRealAccess
+DatabaseAccess <|.. DatabaseProxy
+DatabaseRealAccess <- "-database" DatabaseProxy
+
+interface DatabaseAccess {
++ getSearchResults(String queryString): Collection<String>
++ insertNewRow(List<String> rowData): int
+}
+
+class DatabaseRealAccess{
++ getSearchResults(String queryString): Collection<String>
++ insertNewRow(List<String> rowData): int
+}
+
+class DatabaseProxy {
+- sesionIniciada: boolean
+- contrasena: String
++ iniciarSesion (contrasena: String)
++ getSearchResults(String queryString): Collection<String>
++ insertNewRow(List<String> rowData): int
+}
+
+}
+@enduml
+
+//www.plantuml.com/plantuml/png/nP31IWCn48RlUOgXfnRPFa1PfA8NGKHsds2Q7MiWdS6PMTQYlhjfOo-jU5J88Vpp_VFdpzeSrSTT3k4E7JTeT1CZcK7xiLp2IUi8SzL_nPvKtlRXqWHj0xDc-DPdPtn8xAJF60dEbh-7AzYIzuGQNpgoCRlDUzV4MtWTIVVrlbZ1hUHCqPDmMxNhOarifFv8KoVJ_26PdsQWCXsYYh5aXyyGOaQp7-h-qmlgpvJ-3HXP4hxd51CEk8ADI2RaCed2heNbejQrXyGZgFtH1VDBPl5NZSfP4m_ZBdy1

@@ -1,0 +1,26 @@
+@startuml
+
+
+Bien <|-- Automovil
+Bien  <|-- Inmbueble
+Bien <|-- Alquiler
+Bien <|-- PrendaCombinada
+PrendaCombinada "-bienes" --> "0..*" Bien
+
+abstract class Bien{
+# coefLiquidez
++ valorPrendario(): real
++ valor(): real
+}
+
+class Automovil{
+- modelo: LocalDate
+- kilometraje: int
+- precio: real
++ valor(): real
+}
+
+}
+@enduml
+
+//www.plantuml.com/plantuml/png/TO_DIaGn38NtUOfmtVX31zSNaV5d8yp2LqXx8qJJHlip2qVVtMfnk0X2DkVBoJbaMohbsg82mArmmgiFv_2cLOks5nrim8SKVMEll3RgMnFbl4AFcTD2TnQz95e8_cYSdEzUBXCwTutJvMPpFk7tEG3vKZE5Ya6fb1zuW1CCnayxwKKBlyC5xaajZzGiTdesOsRItyLHVmACcECp1t0ORM6r6NSMIE-fScSleXQvDp_pZ99gHw-PWzY_oNsslRz5_G80

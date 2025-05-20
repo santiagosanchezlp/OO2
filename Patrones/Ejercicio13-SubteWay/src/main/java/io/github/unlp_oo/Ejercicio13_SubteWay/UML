@@ -1,0 +1,36 @@
+@startuml
+
+SubteWay "-constructor" --|> Constructor
+Constructor <|-- ConstructorClasico
+Constructor <|-- ConstructorVegetariano
+Constructor <|-- ConstructorVegano
+Constructor <|-- ConstructorSinTacc
+Constructor "-sandwich" -->  Sandwich
+
+class SubteWay{
++ SubteWay (constructor: Constructor)
++ hacerSandwich()
+}
+
+abstract class Constructor{
++reset()
++ obtenerSandwich(): Sandwich
++ agregarPan()
++ agregarAderezo()
++ agregarPrincipal()
++ agregarAdicional()
+}
+
+class Sandwich{
+- pan: real
+- aderezo: real
+- principal: real
+- adicional: real
++ precio(): real
+}
+}
+
+
+@enduml
+
+//www.plantuml.com/plantuml/png/XPB1QiCm38RlVWgHKqBm2uHHEle2XOpjh2eYDMHsa1t6rkRTvwnnurxMc_JdqsS9ilS19KoVWrBjT0hyWTzGQ7BM1vaeE2b0w-iE3bkYiXfUhbhd7my3UaFkN-QTUmue1krJxXdI6lk6H0zCeJtQxilGUTbz1z2khL8Kj_EG3hse-bv3cTtSv4zKaJeZiIHDMQbPAJn502d0pPaDHAsmvr0kaoxgRJxRRElKWBrmZt94ky2fVUrO-CVbqL6C9JFYyCWPCix-XNCwBjalIiE8jW5X76ADD-cz7vDn8rPTIkh8S4pAQWtcvHMrPzl5_-KN
